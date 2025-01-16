@@ -3,6 +3,7 @@
 import { z } from "zod";
 
 const envSchema = z.object({
+  MODE: z.enum(["production", "development", "test"]),
   API_BASE_URL: z.string().url(),
   AUTH_REDIRECT_URL: z.string().url(),
   DB_URL: z.string().url().min(1),
